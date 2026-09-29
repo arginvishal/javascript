@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature convetor</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            color: #111827;
+        }
+
+        .temp {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: min(420px, 100%);
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 16px;
+            text-align: center;
+            padding: 28px 22px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin: 0 0 18px;
+            font-size: 1.8rem;
+            color: #1f2937;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #374151;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 10px;
+            margin-bottom: 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #result {
+            margin-top: 18px;
+            padding: 12px 10px;
+            border-radius: 8px;
+            background: #eff6ff;
+            color: #1e3a8a;
+            font-size: 1.1rem;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="temp">
+        <div class="container">
+            <h2>Temperature To Fahrenheit</h2>
+            <label for="celcius">Enter the value of Celsius</label>
+            <input type="number" id="celcius" placeholder="Celsius value">
+            <button type="button" onclick="convert()">Convert</button>
+            <h2 id="result"></h2>
+        </div>
+    </div>
+
+    <script>
+        function convert() {
+            let celcius = Number(document.getElementById("celcius").value)
+            let result = (celcius * 9 / 5) + 32
+            document.getElementById("result").innerHTML = result +"°F"
+        }
+        
+    </script>
+ 
+</body>
+
+</html>
